@@ -4,12 +4,7 @@ HTML,CSS
 📌Task Title: TEMPERATURE CONVERTER WEBSITE 
  📌Technology Used: HTML & CSS & JS
 📌 Description:
-hashtag
 
-hashtag#TEMPERATURECONVERTERWEBSITE 
-hashtag
-
-hashtag#LEVEL1
 PURPOSE:- 
 The Temperature Converter Website was created as a simple yet functional web application to practice and demonstrate my skills in HTML, CSS, and JavaScript. The purpose of this project is:
 ✅ To provide users with an easy-to-use tool for converting between Celsius, Fahrenheit, and Kelvin.
