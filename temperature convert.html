@@ -1,0 +1,142 @@
+<!doctype html>
+<html>    
+<head> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Temperature converter website</title>
+  <style>
+    *{padding: 0;margin:0; box-sizing: border-box; font-family: monospace;}
+    body{
+      background-image:url('.vscode/images.jpg');
+      background-color: #ccc;
+      background-position:bottom;
+      background-repeat:repeat-x;
+      background-size:cover;
+      font-size:25px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .container{
+      width: 500px;
+      padding:15px;
+      text-align:center;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    }
+    h2{
+      margin-bottom:20px;
+      color: #72d60f;
+    }
+    label{
+      display: inline-block;
+      font-family:'Lucida Sans','Lucida Grande','Lucida Sans Unicode', Geneva;
+      padding:10px 0;
+      text-align: left;
+      margin-top: 10px;
+      position: relative;
+    }
+    label::after{
+     content: "";
+     position: absolute;
+     left:0;
+     bottom: 0;
+     width:0%;
+     height:3px;
+     background:linear-gradient(90deg,#ff4b1f,#159eb6,#28a745);
+     transition: width 0.4s ease-in-out;
+     border-radius: 5px;
+}
+    label:hover{
+      color: #b87927;
+      font-size: 1.05em;
+      text-shadow: 0px 0px 5px rgba(32, 107, 187, 0.973);
+      cursor: pointer;
+    }
+    label:hover:after{
+     width:100%;
+    }
+    input,select{
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      animation: borderGlow 5s linear infinite;
+      font-size: 16px;
+      border-radius: 50px;
+      border: 2px solid red;
+      outline: none;
+    }
+    @keyframes borderGlow{
+      0%{border-color: #ff4b1f;}
+      25%{border-color: #ff9068;}
+      50%{border-color: #1fddff;}
+      75%{border-color: #28a745;}
+      100%{border-color: #ff4b1f;}
+    }
+    button{
+      width: 100%;
+      padding:12px;
+      background: #007bff;
+      color: #fff;
+      border:none;
+      font-size: 25px;
+      font-weight: bold;
+      cursor:pointer;
+      margin-top: 15px;
+      transition: 0.3s;
+    }
+    button:hover{
+      background: #465fd1;
+    }
+    #result{
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Temperature converter</h2>
+    <label for="temperature">Enter temperature:</label>
+    <input type="number" id="temperature" placeholder="Enter value">
+
+    <label for="unit">Convert to:</label>
+    <select id="unit">
+      <option value="Celsius">Celsius</option>
+      <option value="Fahrenheit">Fahrenheit</option>
+      <option value="Kelvin">Kelvin</option>
+    </select><br><br>
+
+    <button type="button" onclick="convertTemp()">Convert</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function convertTemp(){
+      let temp = parseFloat(document.getElementById("temperature").value);
+      let unit = document.getElementById("unit").value;
+      let result = "";
+
+      if(isNaN(temp)){
+        result = "Please enter a valid number!";
+      } 
+      else {
+        if(unit === "Celsius"){
+          result = ((temp - 32) * 5/9).toFixed(2) + " °C";
+        }
+        else if(unit === "Fahrenheit"){
+          result = ((temp * 9/5) + 32).toFixed(2) + " °F";
+        }
+        else if(unit === "Kelvin"){
+          result = (temp + 273.15).toFixed(2) + " K";
+        }
+      }
+      document.getElementById("result").innerText = "Converted: " + result;
+    }
+  </script>
+</body>
+</html>
