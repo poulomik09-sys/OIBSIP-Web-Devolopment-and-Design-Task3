@@ -10,4 +10,4 @@ The Temperature Converter Website was created as a simple yet functional web app
 ✅ To provide users with an easy-to-use tool for converting between Celsius, Fahrenheit, and Kelvin.
 ✅ INPUT:HTML5 like div class container form input for the temperature select options like Celcius , Farenheit,Kelvin 
 CSS3 like font , display, animations ,margin, padding and many more methods for button input and selection.
-JS for enter the temperature and displaying the result we used script method .
+JS for enter the temperature and displaying the result we used script method.
